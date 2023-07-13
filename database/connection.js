@@ -7,6 +7,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 //Metodo de conexion
 const connection = async()=>{
     try{
+        console.log(MONGODB_URI)
         await mongoose.connect(`${MONGODB_URI}`);
         console.log("Conectado exitosamente a la BD app_ecogarage");
     }catch(error){
