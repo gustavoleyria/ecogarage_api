@@ -11,7 +11,7 @@ const connection = async()=>{
         console.log(MONGODB_URI)
         // mongoose.set('strictQuery', true)
         // await mongoose.connect(`${MONGODB_URI}`);
-        await mongoose.connect(MONGODB_URI, {
+        await mongoose.connect(process.env.MONGODB_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
           });
