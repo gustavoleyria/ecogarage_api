@@ -8,8 +8,12 @@ const MONGODB_URI = process.env.MONGODB_URI;
 const connection = async()=>{
     try{
         console.log(MONGODB_URI)
-        mongoose.set('strictQuery', true)
-        await mongoose.connect(`${MONGODB_URI}`);
+        // mongoose.set('strictQuery', true)
+        // await mongoose.connect(`${MONGODB_URI}`);
+        await mongoose.connect(MONGODB_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+          });
         console.log("Conectado exitosamente a la BD app_ecogarage");
     }catch(error){
         console.log(error);
